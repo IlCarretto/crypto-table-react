@@ -1,0 +1,35 @@
+@import "@fortawesome/fontawesome-free/css/all.css";
+@use "../../index.css";
+
+table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table thead {
+    border-bottom: 1px solid var(--gray-light);
+}
+
+tr {
+    border-bottom: 1px solid var(--gray-light);
+}
+
+tr:nth-child(even) td{
+    background-color: var(--gray);
+}
+
+table td,
+table th {
+    padding: 10px 0;
+    text-align: center;
+    width: calc(100% / 4);
+}
+
+table th {
+    padding: 20px;
+}
+
+tr img {
+    width: 50px;
+}

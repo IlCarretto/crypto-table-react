@@ -1,13 +1,121 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --primary: #02225b;
+  --primary-dark: #03123a;
+  --primary-light: #0057c8;
+  --secondary: #20c265;
+  --gray: #1c2a4e;
+  --gray-light: #8794b5;
+  --white: #fff;
+
+  --sidebar-width: 60px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  color: var(--white);
+  font-family: "Open Sans", sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+h1 {
+  padding: 2rem;
+}
+
+input,
+button,
+i {
+  cursor: pointer;
+}
+
+input,
+button {
+  background: transparent;
+  border: 1px solid white;
+  color: #FFF;
+  text-align: center;
+}
+
+/* GENERAL LAYOUT */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--primary-dark);
+}
+
+main {
+  height: 100%;
+  flex-grow: 1;
+  display: flex;
+  overflow-y: hidden;
+}
+
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - var(--sidebar-width));
+}
+
+.content-header,
+.content-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.content-main {
+  overflow-y: auto;
+}
+
+.content-header {
+  padding: 1rem 1rem;
+  border-bottom: 1px solid var(--gray-light);
+}
+
+.content-footer {
+  padding: 1rem 2rem;
+  border-top: 1px solid var(--gray-light);
+}
+
+.input {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+  margin: 0;
+}
+
+.paginationBtn,
+.paginationInput {
+  height: 35px;
+  width: 60px;
+}
+
+.paginationBtn {
+  font-size: 12px;
+}
+
+.paginationBtn:first-child {
+  border-radius: 4px 0 0 4px;
+}
+
+.paginationInput + .paginationBtn {
+  border-radius: 0 4px 4px 0;
+}
+
+i.active {
+  color: var(--secondary);
 }

@@ -1,0 +1,33 @@
+.header {
+    display: flex;
+    align-items: center;
+    background-color: var(--primary);
+}
+
+.header-logo {
+    background-color: var(--primary-light);
+    width: var(--sidebar-width);
+    height: var(--sidebar-width);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 800;
+  }
+  
+.header-content {
+    flex-grow: 1;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-title {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.header-actions {
+    font-size: 1.4rem;
+}

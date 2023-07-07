@@ -1,0 +1,19 @@
+@use "../../index.css";
+@import "@fortawesome/fontawesome-free/css/all.css";
+
+.sidebar {
+    width: var(--sidebar-width);
+    background-color: var(--primary);
+}
+
+.sidebar-nav li {
+    height: var(--sidebar-width);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
+
+.sidebar-nav li.active {
+    background-color: var(--primary-light);
+}
