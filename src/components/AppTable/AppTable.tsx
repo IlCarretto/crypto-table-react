@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./AppTable.css";
 import { Coin } from "../../Coin";
+import LineChart from "../LineChart";
 
 interface IProps {
   state: {
@@ -65,6 +66,11 @@ const AppTable = ({
     return bPrice;
   }
 
+  function prepareDataset(coin: Coin) {
+    const data = coin.sparkline.map((item) => parseFloat(item));
+    return data;
+  }
+
   const getRows = () => {
     return coins.map((coin) => (
       <tr key={coin.uuid}>
@@ -77,7 +83,9 @@ const AppTable = ({
         </td>
         <td className="price">{formatPrice(coin.price)}</td>
         <td className="market-cap">{formatBillionPrice(coin.marketCap)}</td>
-        <td className="chart">Chart</td>
+        <td className="chart">
+          <LineChart dataset={prepareDataset(coin)} title={coin.change} />
+        </td>
       </tr>
     ));
   };
